@@ -1,0 +1,12 @@
+environments:
+  default:
+  sandbox:
+
+helmfiles:
+- path: git::https://github.com/drequena/grafana-package.git@helmfile.yaml?ref=main
+  values:
+  - grafana:
+      enabled: true
+      resources:
+        limits: 
+          cpu: "100m"
