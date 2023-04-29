@@ -10,3 +10,7 @@ helmfiles:
       resources:
         limits: 
           cpu: "100m"
+- path: git::https://github.com/drequena/prometheus-package.git@helmfile.yaml?ref=main
+  values:
+  - prometheus:
+      {{ .Values | get "prometheus" dict | toYaml | indent 6 | trim }}
